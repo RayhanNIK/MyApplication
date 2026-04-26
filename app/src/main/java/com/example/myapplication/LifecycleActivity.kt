@@ -1,20 +1,43 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class LifecycleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_lifecycle)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        Log.d("Log Lifecycle", " - - on Create")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("Log Lifecycle", " - - on Start")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("Log Lifecycle", " - - on Resume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("Log Lifecycle", " - - on Pause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("Log Lifecycle", " - - on Stop")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("Log Lifecycle", " - - on Restart")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("Log Lifecycle", " - - on Destroy")
     }
 }
+
