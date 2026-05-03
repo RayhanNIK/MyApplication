@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 class LifecycleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_lifecycle)
+
         Log.d("Log Lifecycle", " - - on Create")
     }
 
