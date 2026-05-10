@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
         val myText: TextView = findViewById(R.id.myText1)
         myText.text = "Goodbye"
+
         val myButton: Button = findViewById(R.id.myButton1)
         myButton.setOnClickListener(this)
         }
