@@ -13,11 +13,18 @@
         android:layout_height="wrap_content"
         android:text="Hello World!" />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_foreground" />
+
     <Button
         android:id="@+id/myButton1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Click me"
         tools:ignore="MissingConstraints" />
+
 
     <Button
         android:id="@+id/btnIntent"
