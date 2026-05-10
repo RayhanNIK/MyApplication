@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 
@@ -26,7 +25,11 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View) {
         when (view.id) {
             R.id.btnMap -> {
-                Toast.makeText(this, "Button map diklik", Toast.LENGTH_SHORT).show()
+                val latitude = "47.6"
+                val longitude = "-122.3"
+                val showMap = "geo:$latitude,$longitude".toUri()
+                val showMapIntent = Intent(Intent.ACTION_VIEW, showMap)
+                startActivity(showMapIntent)
             }
 
             R.id.btnTelephone -> {
