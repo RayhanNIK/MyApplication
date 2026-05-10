@@ -1,10 +1,12 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 
 class IntentActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +30,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.btnTelephone -> {
-                Toast.makeText(this, "Button telephone diklik", Toast.LENGTH_SHORT).show()
+                val phoneNumber = "0812346789"
+                val dialphoneIntent = Intent(Intent.ACTION_DIAL, "tel:$phoneNumber".toUri())
+                startActivity(dialphoneIntent)
             }
             R.id.btnMessage -> {
                 Toast.makeText(this, "Button message diklik", Toast.LENGTH_SHORT).show()
