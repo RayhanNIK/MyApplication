@@ -1,6 +1,8 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -20,11 +22,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnIntent: Button = findViewById(R.id.btnIntent)
         btnIntent.setOnClickListener(this)
+    }
+
+
+    override fun onClick(view: View) {
+        Toast.makeText(this, "Click", Toast.LENGTH_SHORT).show()
+
+        when (view.id) {
+            R.id.btnIntent -> {
+                val intentIntent = Intent(this@MainActivity, IntentActivity::class.java)
+                startActivity(intentIntent)
+            }
         }
-
-
-
-    override fun onClick(v: View?) {
-        Toast.makeText(this,"Click", Toast.LENGTH_SHORT).show()
     }
 }
