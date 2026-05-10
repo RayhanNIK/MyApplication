@@ -17,6 +17,9 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnLifecycle: Button = findViewById(R.id.btnLifecycle)
         btnLifecycle.setOnClickListener(this)
+
+        val btnIntent: Button = findViewById(R.id.btnIntent)
+        btnIntent.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -30,6 +33,10 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
                 Log.d("Log intent", "Intent")
                 val lifecycleIntent = Intent(this@MenuActivity, LifecycleActivity::class.java)
                 startActivity(lifecycleIntent)
+            }
+            R.id.btnIntent -> {
+                val intentIntent = Intent(this@MenuActivity, IntentActivity::class.java)
+                startActivity(intentIntent)
             }
         }
     }

@@ -21,4 +21,11 @@
         android:layout_gravity="center"
         android:text="Lifecycle" />
 
+    <Button
+        android:id="@+id/btnIntent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Intent" />
+
 </LinearLayout>
