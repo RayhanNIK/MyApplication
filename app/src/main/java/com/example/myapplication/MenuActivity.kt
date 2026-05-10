@@ -44,6 +44,14 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
                 val intentIntent = Intent(this@MenuActivity, IntentActivity::class.java)
                 startActivity(intentIntent)
             }
+            R.id.btnShareText -> {
+                val sharedtext = "Ini text yang akan di share"
+                val sharedTextIntent = Intent(Intent.ACTION_SEND)
+                sharedTextIntent.putExtra(Intent.EXTRA_TEXT,sharedtext)
+                sharedTextIntent.type = "text/plain"
+                val textIntent = Intent.createChooser(sharedTextIntent,null)
+                startActivity(textIntent)
+            }
         }
     }
 }
