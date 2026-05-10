@@ -28,4 +28,18 @@
         android:layout_gravity="center"
         android:text="Intent" />
 
+    <Button
+        android:id="@+id/btnShareText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Share Text"/>
+
+    <Button
+        android:id="@+id/btnOpenWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Open Web"/>
+
 </LinearLayout>

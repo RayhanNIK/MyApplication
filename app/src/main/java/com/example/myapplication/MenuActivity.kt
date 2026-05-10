@@ -20,6 +20,12 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnIntent: Button = findViewById(R.id.btnIntent)
         btnIntent.setOnClickListener(this)
+
+        val btnShareText: Button = findViewById(R.id.btnShareText)
+        btnShareText.setOnClickListener(this)
+
+        val btnOpenWeb: Button = findViewById(R.id.btnOpenWeb)
+        btnOpenWeb.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
