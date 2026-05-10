@@ -17,10 +17,15 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
         val btnTelephone: Button = findViewById(R.id.btnTelephone)
         btnTelephone.setOnClickListener(this)
     }
+
     override fun onClick(view: View) {
         when (view.id) {
             R.id.btnMap -> {
-                Toast.makeText(this,"Button map diklik", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Button map diklik", Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.btnTelephone -> {
+                Toast.makeText(this, "Button telephone diklik", Toast.LENGTH_SHORT).show()
             }
         }
     }
