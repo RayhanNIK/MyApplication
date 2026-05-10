@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 
 class MenuActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,6 +52,11 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
                 sharedTextIntent.type = "text/plain"
                 val textIntent = Intent.createChooser(sharedTextIntent,null)
                 startActivity(textIntent)
+            }
+            R.id.btnOpenWeb -> {
+                val webPage = "http://www.google.co.id/".toUri()
+                val openWebIntent = Intent(Intent.ACTION_VIEW, webPage)
+                startActivity(openWebIntent)
             }
         }
     }
