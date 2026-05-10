@@ -30,6 +30,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnTelephone -> {
                 Toast.makeText(this, "Button telephone diklik", Toast.LENGTH_SHORT).show()
             }
+            R.id.btnMessage -> {
+                Toast.makeText(this, "Button message diklik", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
