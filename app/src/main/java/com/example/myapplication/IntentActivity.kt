@@ -16,6 +16,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnTelephone: Button = findViewById(R.id.btnTelephone)
         btnTelephone.setOnClickListener(this)
+
+        val btnMessage: Button = findViewById(R.id.btnMessage)
+        btnMessage.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
