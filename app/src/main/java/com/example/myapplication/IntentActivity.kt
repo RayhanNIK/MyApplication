@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class IntentActivity : AppCompatActivity(), View.OnClickListener {
@@ -12,6 +13,13 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnMap: Button = findViewById(R.id.btnMap)
         btnMap.setOnClickListener(this)
+    }
+    override fun onClick(view: View) {
+        when (view.id) {
+            R.id.btnMap -> {
+                Toast.makeText(this,"Button map diklik", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
 
