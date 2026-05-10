@@ -35,7 +35,12 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(dialphoneIntent)
             }
             R.id.btnMessage -> {
-                Toast.makeText(this, "Button message diklik", Toast.LENGTH_SHORT).show()
+                val phoneNumber = "08123456789"
+                val sendSMS = "smsto:$phoneNumber".toUri()
+                val message = "Halo, ini Rere"
+                val sendsmsIntent = Intent(Intent.ACTION_SENDTO, sendSMS)
+                sendsmsIntent.putExtra("sms_body", message)
+                startActivity(sendsmsIntent)
             }
         }
     }
