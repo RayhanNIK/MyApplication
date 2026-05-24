@@ -8,24 +8,38 @@
     tools:context=".LayoutActivity">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/pixel_google"/>
-    
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/pixel_google" />
+
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
         android:background="#4D000000"
+        android:drawableStart="@drawable/ic_collections_white_18dp"
         android:drawableLeft="@drawable/ic_collections_white_18dp"
         android:drawablePadding="4dp"
-        android:drawableStart="@drawable/ic_collections_white_18dp"
         android:elevation="2dp"
         android:padding="8dp"
         android:text="@string/dummy_photos"
         android:textColor="@android:color/white"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="193dp"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.318" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
