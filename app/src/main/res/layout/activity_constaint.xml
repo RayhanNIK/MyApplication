@@ -12,4 +12,16 @@
         android:layout_height="150dp"
         android:src="@drawable/ic_user_square"/>
 
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:lines="1" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:lines="1"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
