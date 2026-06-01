@@ -7,4 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".ConstaintActivity">
 
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_user_square"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
