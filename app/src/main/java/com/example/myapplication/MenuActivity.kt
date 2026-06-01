@@ -30,6 +30,9 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnLayout: Button = findViewById(R.id.btnLayout)
         btnLayout.setOnClickListener(this)
+
+        val btnConstraint: Button = findViewById(R.id.btnConstraint)
+        btnConstraint.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -64,6 +67,10 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnLayout -> {
                 val layoutIntent = Intent(this@MenuActivity, LayoutActivity::class.java)
                 startActivity(layoutIntent)
+            }
+            R.id.btnConstraint -> {
+                val constraintIntent = Intent(this@MenuActivity, ConstaintActivity::class.java)
+                startActivity(constraintIntent)
             }
         }
     }
