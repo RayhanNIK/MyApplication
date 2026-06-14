@@ -63,4 +63,11 @@
         android:layout_gravity="center"
         android:text="Volume"/>
 
+    <Button
+        android:id="@+id/btnOperation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Operation"/>
+
 </LinearLayout>

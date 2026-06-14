@@ -36,6 +36,9 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnVolume: Button = findViewById(R.id.btnVolume)
         btnVolume.setOnClickListener(this)
+
+        val btnOperation: Button = findViewById(R.id.btnOperation)
+        btnOperation.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -78,6 +81,10 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnVolume -> {
                 val volumetIntent = Intent(this@MenuActivity, VolumeActivity::class.java)
                 startActivity(volumetIntent)
+            }
+            R.id.btnOperation -> {
+                val operationIntent = Intent(this@MenuActivity, OperationActivity::class.java)
+                startActivity(operationIntent)
             }
         }
     }
