@@ -1,12 +1,13 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-class OperationActivity : AppCompatActivity() {
+class OperationActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var etBilanganX: EditText
     private lateinit var etBilanganY: EditText
@@ -32,5 +33,14 @@ class OperationActivity : AppCompatActivity() {
         btnOpDivide = findViewById(R.id.btnOpDivide)
         btnOpReset = findViewById(R.id.btnOpReset)
 
+        btnOpAdd.setOnClickListener(this)
+        btnOpSubstract.setOnClickListener(this)
+        btnOpMultiply.setOnClickListener(this)
+        btnOpDivide.setOnClickListener(this)
+        btnOpReset.setOnClickListener(this)
+    }
+
+    override fun onClick(view: View) {
+        TODO("Not yet implemented")
     }
 }
