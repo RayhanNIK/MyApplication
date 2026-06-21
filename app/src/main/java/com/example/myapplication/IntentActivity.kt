@@ -20,6 +20,12 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnMessage: Button = findViewById(R.id.btnMessage)
         btnMessage.setOnClickListener(this)
+
+        val btnShareText: Button = findViewById(R.id.btnShareText)
+        btnShareText.setOnClickListener(this)
+
+        val btnOpenWeb: Button = findViewById(R.id.btnOpenWeb)
+        btnOpenWeb.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -44,6 +50,19 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
                 val sendsmsIntent = Intent(Intent.ACTION_SENDTO, sendSMS)
                 sendsmsIntent.putExtra("sms_body", message)
                 startActivity(sendsmsIntent)
+            }
+            R.id.btnShareText -> {
+                val sharedtext = "Ini text yang akan di share"
+                val sharedTextIntent = Intent(Intent.ACTION_SEND)
+                sharedTextIntent.putExtra(Intent.EXTRA_TEXT,sharedtext)
+                sharedTextIntent.type = "text/plain"
+                val textIntent = Intent.createChooser(sharedTextIntent,null)
+                startActivity(textIntent)
+            }
+            R.id.btnOpenWeb -> {
+                val webPage = "http://www.google.co.id/".toUri()
+                val openWebIntent = Intent(Intent.ACTION_VIEW, webPage)
+                startActivity(openWebIntent)
             }
         }
     }

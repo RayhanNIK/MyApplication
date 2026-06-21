@@ -22,12 +22,6 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
         val btnIntent: Button = findViewById(R.id.btnIntent)
         btnIntent.setOnClickListener(this)
 
-        val btnShareText: Button = findViewById(R.id.btnShareText)
-        btnShareText.setOnClickListener(this)
-
-        val btnOpenWeb: Button = findViewById(R.id.btnOpenWeb)
-        btnOpenWeb.setOnClickListener(this)
-
         val btnLayout: Button = findViewById(R.id.btnLayout)
         btnLayout.setOnClickListener(this)
 
@@ -56,19 +50,6 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnIntent -> {
                 val intentIntent = Intent(this@MenuActivity, IntentActivity::class.java)
                 startActivity(intentIntent)
-            }
-            R.id.btnShareText -> {
-                val sharedtext = "Ini text yang akan di share"
-                val sharedTextIntent = Intent(Intent.ACTION_SEND)
-                sharedTextIntent.putExtra(Intent.EXTRA_TEXT,sharedtext)
-                sharedTextIntent.type = "text/plain"
-                val textIntent = Intent.createChooser(sharedTextIntent,null)
-                startActivity(textIntent)
-            }
-            R.id.btnOpenWeb -> {
-                val webPage = "http://www.google.co.id/".toUri()
-                val openWebIntent = Intent(Intent.ACTION_VIEW, webPage)
-                startActivity(openWebIntent)
             }
             R.id.btnLayout -> {
                 val layoutIntent = Intent(this@MenuActivity, LayoutActivity::class.java)
