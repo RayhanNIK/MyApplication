@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.311" />
 
     <EditText
-        android:id="@+id/et_username"
+        android:id="@+id/etLoginUsername"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:lines="1"
@@ -29,21 +29,21 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/et_password"
+        android:id="@+id/etLoginPassword"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:lines="1"
-        app:layout_constraintEnd_toEndOf="@+id/et_username"
-        app:layout_constraintStart_toStartOf="@+id/et_username"
-        app:layout_constraintTop_toBottomOf="@+id/et_username" />
+        app:layout_constraintEnd_toEndOf="@+id/etLoginUsername"
+        app:layout_constraintStart_toStartOf="@+id/etLoginUsername"
+        app:layout_constraintTop_toBottomOf="@+id/etLoginUsername" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Login"
-        app:layout_constraintEnd_toEndOf="@+id/et_password"
-        app:layout_constraintStart_toStartOf="@+id/et_password"
-        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+        app:layout_constraintEnd_toEndOf="@+id/etLoginPassword"
+        app:layout_constraintStart_toStartOf="@+id/etLoginPassword"
+        app:layout_constraintTop_toBottomOf="@+id/etLoginPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
