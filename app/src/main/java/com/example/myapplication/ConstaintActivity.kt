@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -24,9 +25,35 @@ class ConstaintActivity : AppCompatActivity() {
         btnLogin = findViewById(R.id.btnLogin)
 
         btnLogin.setOnClickListener {
-            doLogin(etLoginUsername.text.toString(), etLoginPassword.text.toString())
+            checkBlankLoginField()
         }
     }
+
+    private fun checkBlankLoginField() {
+
+        tvLoginStatus.text = resources.getString(R.string.status_login_title)
+        when {
+            etLoginUsername.text.isBlank()
+                -> etLoginUsername.error = "Tidak boleh kosong"
+
+            etLoginPassword.text.isBlank()
+                -> etLoginPassword.error = "Tidak boleh kosong"
+
+            etLoginPassword.text.length < 7
+                -> etLoginPassword.error = "Minimal 7 karakter"
+
+            !Patterns.EMAIL_ADDRESS.matcher(etLoginUsername.text)
+                .matches() -> etLoginUsername.error = "Format email salah"
+
+            else -> {
+                doLogin(
+                    etLoginUsername.text.toString(),
+                    etLoginPassword.text.toString()
+                )
+            }
+        }
+    }
+
     private fun doLogin(username: String, password: String) {
         val isSuccess =
             username.trim() == "user@mail.com" && password == "password"
