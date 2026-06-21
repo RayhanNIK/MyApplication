@@ -24,7 +24,17 @@ class ConstaintActivity : AppCompatActivity() {
         btnLogin = findViewById(R.id.btnLogin)
 
         btnLogin.setOnClickListener {
+            doLogin(etLoginUsername.text.toString(), etLoginPassword.text.toString())
+        }
+    }
+    private fun doLogin(username: String, password: String) {
+        val isSuccess =
+            username.trim() == "user@mail.com" && password == "password"
 
+        if (isSuccess) {
+            tvLoginStatus.text = getString(R.string.login_success)
+        } else {
+            tvLoginStatus.text = getString(R.string.login_failed)
         }
     }
 }
