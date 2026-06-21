@@ -41,6 +41,22 @@ class OperationActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View) {
-        TODO("Not yet implemented")
+        when(view.id) {
+            R.id.btnOpAdd -> {
+
+            }
+            R.id.btnOpSubstract -> {
+
+            }
+            R.id.btnOpMultiply -> {
+
+            }
+            R.id.btnOpDivide -> {
+
+            }
+            R.id.btnOpReset -> {
+
+            }
+        }
     }
 }
