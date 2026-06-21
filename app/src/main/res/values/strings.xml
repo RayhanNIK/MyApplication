@@ -30,5 +30,11 @@
     <string name="length">Panjang</string>
     <string name="result">Hasil</string>
     <string name="calculate">Hitung</string>
+    <string name="email_field">Email</string>
+    <string name="password_field">Password</string>
+    <string name="login_title">Login</string>
+    <string name="status_login_title">Status Login: -</string>
+    <string name="login_success">Status Login: Berhasil</string>
+    <string name="login_failed">Status Login: Gagal</string>
 
 </resources>
