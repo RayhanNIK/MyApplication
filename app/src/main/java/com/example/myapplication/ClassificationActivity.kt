@@ -12,6 +12,7 @@ class ClassificationActivity : AppCompatActivity() {
     private lateinit var btnClassificationShow: Button
     private lateinit var tvClassificationResult: TextView
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_classification)
@@ -19,5 +20,23 @@ class ClassificationActivity : AppCompatActivity() {
         etClassificationScore = findViewById(R.id.etClassificationScore)
         btnClassificationShow = findViewById(R.id.btnClassificationShow)
         tvClassificationResult = findViewById(R.id.tvClassificationResult)
+
+        etClassificationScore.setText("0")
+
+        btnClassificationShow.setOnClickListener {
+            var score = etClassificationScore.text.toString().toInt()
+            doClassification(score)
+        }
+    }
+
+    private fun doClassification(nilai: Int) {
+        var hasil = ""
+        when (nilai) {
+            60 -> hasil = "Hasilnya : Belum Lulus"
+            75 -> hasil = "Hasilnya : Lulus Aja"
+            80 -> hasil = "Hasilnya : Lulus Banget"
+            else -> hasil = "Hasilnya : Nilai Error"
+        }
+        tvClassificationResult.text = hasil
     }
 }
