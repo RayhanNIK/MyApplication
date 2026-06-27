@@ -46,7 +46,7 @@ class ClassificationActivity : AppCompatActivity() {
             in 0..70 -> hasil = "Hasilnya : Belum Lulus"
             in 71..80 -> hasil = "Hasilnya : Lulus Aja"
             in 81..100 -> hasil = "Hasilnya : Lulus Banget"
-            else -> hasil = "Hasilnya : Nilai Error"
+            !in 0..100 -> hasil = "Hasilnya : Nilai Error"
         }
         tvClassificationResult.text = hasil
     }
