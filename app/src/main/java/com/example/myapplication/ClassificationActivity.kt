@@ -32,9 +32,9 @@ class ClassificationActivity : AppCompatActivity() {
     private fun doClassification(nilai: Int) {
         var hasil = ""
         when (nilai) {
-            60 -> hasil = "Hasilnya : Belum Lulus"
-            75 -> hasil = "Hasilnya : Lulus Aja"
-            80 -> hasil = "Hasilnya : Lulus Banget"
+            in 0..70 -> hasil = "Hasilnya : Belum Lulus"
+            in 71..80 -> hasil = "Hasilnya : Lulus Aja"
+            in 81..100 -> hasil = "Hasilnya : Lulus Banget"
             else -> hasil = "Hasilnya : Nilai Error"
         }
         tvClassificationResult.text = hasil
