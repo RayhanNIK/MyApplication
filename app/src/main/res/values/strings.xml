@@ -39,4 +39,8 @@
     <string name="et_nilai_hint">Nilai</string>
     <string name="hasilnya">Hasilnya : %1$s</string>
     <string name="classification_title">Klasifikasi Nilai</string>
+    <string name="operation_add">+</string>
+    <string name="operation_substract">-</string>
+    <string name="operation_multiply">x</string>
+    <string name="operation_divide">:</string>
 </resources>
