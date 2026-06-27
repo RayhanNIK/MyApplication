@@ -19,6 +19,9 @@ class OperationActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnOpDivide: Button
     private lateinit var btnOpReset: Button
 
+    private var inputX: Long = 0
+    private var inputY: Long = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_operation)
@@ -40,10 +43,18 @@ class OperationActivity : AppCompatActivity(), View.OnClickListener {
         btnOpReset.setOnClickListener(this)
     }
 
+    private fun getInputNumbers() {
+        inputX = etBilanganX.text.toString().toLong()
+        inputY = etBilanganY.text.toString().toLong()
+    }
+
     override fun onClick(view: View) {
         when(view.id) {
             R.id.btnOpAdd -> {
-
+                tvOperator.text = resources.getString(R.string.operation_add)
+                getInputNumbers()
+                val operation = inputX + inputY
+                tvOperationResult.text = operation.toString()
             }
             R.id.btnOpSubstract -> {
 
