@@ -11,21 +11,27 @@
 
     <EditText
         android:id="@+id/etClassificationScore"
-        android:hint="@string/et_nilai_hint"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="@string/et_nilai_hint"
+        android:inputType="number" />
 
     <Button
         android:id="@+id/btnClassificationShow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/classification_title" />
+        android:background="@color/design_default_color_primary"
+        android:text="@string/classification_title"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/tvClassificationResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hasilnya" />
+        android:layout_marginTop="8dp"
+        android:text="@string/hasilnya"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="35sp" />
 
 
 </LinearLayout>
