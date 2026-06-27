@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class ClassificationActivity : AppCompatActivity() {
@@ -24,8 +25,18 @@ class ClassificationActivity : AppCompatActivity() {
         etClassificationScore.setText("0")
 
         btnClassificationShow.setOnClickListener {
-            var score = etClassificationScore.text.toString().toInt()
-            doClassification(score)
+            checkField()
+        }
+    }
+
+    private fun checkField() {
+        var score = etClassificationScore.text
+        if(score.isNullOrEmpty()) {
+            Toast.makeText(this,"Nilai tidak boleh kosong", Toast.LENGTH_SHORT).show()
+        } else if (score.toString().toInt() > 100) {
+            Toast.makeText(this, "Nilai tidak boleh lebih dari 100", Toast.LENGTH_SHORT).show()
+        } else {
+            doClassification(score.toString().toInt())
         }
     }
 
