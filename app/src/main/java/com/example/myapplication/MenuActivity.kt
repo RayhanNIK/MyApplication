@@ -33,6 +33,9 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnOperation: Button = findViewById(R.id.btnOperation)
         btnOperation.setOnClickListener(this)
+
+        val btnClassification: Button = findViewById(R.id.btnClassification)
+        btnClassification.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -66,6 +69,10 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnOperation -> {
                 val operationIntent = Intent(this@MenuActivity, OperationActivity::class.java)
                 startActivity(operationIntent)
+            }
+            R.id.btnClassification -> {
+                val classificationIntent = Intent(this@MenuActivity, ClassificationActivity::class.java)
+                startActivity(classificationIntent)
             }
         }
     }
