@@ -63,7 +63,10 @@ class OperationActivity : AppCompatActivity(), View.OnClickListener {
                 tvOperationResult.text = operation.toString()
             }
             R.id.btnOpMultiply -> {
-
+                tvOperator.text = resources.getString(R.string.operation_multiply)
+                getInputNumbers()
+                val operation = inputX * inputY
+                tvOperationResult.text = operation.toString()
             }
             R.id.btnOpDivide -> {
 
