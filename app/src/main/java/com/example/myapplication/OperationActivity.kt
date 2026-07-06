@@ -66,7 +66,10 @@ class OperationActivity : AppCompatActivity(), View.OnClickListener {
 
             }
             R.id.btnOpReset -> {
-
+                etBilanganX.setText("0")
+                etBilanganY.setText("0")
+                tvOperator.text = ""
+                tvOperationResult.text = "0"
             }
         }
     }
