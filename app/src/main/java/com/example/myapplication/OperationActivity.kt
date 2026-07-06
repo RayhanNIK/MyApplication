@@ -57,7 +57,10 @@ class OperationActivity : AppCompatActivity(), View.OnClickListener {
                 tvOperationResult.text = operation.toString()
             }
             R.id.btnOpSubstract -> {
-
+                tvOperator.text = resources.getString(R.string.operation_substract)
+                getInputNumbers()
+                val operation = inputX - inputY
+                tvOperationResult.text = operation.toString()
             }
             R.id.btnOpMultiply -> {
 
