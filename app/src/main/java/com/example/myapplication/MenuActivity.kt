@@ -4,73 +4,60 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.net.toUri
+import com.example.myapplication.databinding.ActivityMenuBinding
 
 class MenuActivity : AppCompatActivity(), View.OnClickListener {
+    private lateinit var binding: ActivityMenuBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu)
+        binding = ActivityMenuBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val btnHello: Button = findViewById(R.id.btnHello)
-        btnHello.setOnClickListener(this)
-
-        val btnLifecycle: Button = findViewById(R.id.btnLifecycle)
-        btnLifecycle.setOnClickListener(this)
-
-        val btnIntent: Button = findViewById(R.id.btnIntent)
-        btnIntent.setOnClickListener(this)
-
-        val btnLayout: Button = findViewById(R.id.btnLayout)
-        btnLayout.setOnClickListener(this)
-
-        val btnConstraint: Button = findViewById(R.id.btnConstraint)
-        btnConstraint.setOnClickListener(this)
-
-        val btnVolume: Button = findViewById(R.id.btnVolume)
-        btnVolume.setOnClickListener(this)
-
-        val btnOperation: Button = findViewById(R.id.btnOperation)
-        btnOperation.setOnClickListener(this)
-
-        val btnClassification: Button = findViewById(R.id.btnClassification)
-        btnClassification.setOnClickListener(this)
+        binding.btnHello.setOnClickListener(this)
+        binding.btnLifecycle.setOnClickListener(this)
+        binding.btnIntent.setOnClickListener(this)
+        binding.btnLayout.setOnClickListener(this)
+        binding.btnConstraint.setOnClickListener(this)
+        binding.btnVolume.setOnClickListener(this)
+        binding.btnOperation.setOnClickListener(this)
+        binding.btnClassification.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
-        when (view.id) {
-            R.id.btnHello -> {
+        when (view) {
+            binding.btnHello -> {
                 Log.d("Log intent", "Intent Hello")
                 val helloIntent = Intent(this@MenuActivity, MainActivity::class.java)
                 startActivity(helloIntent)
             }
-            R.id.btnLifecycle -> {
+            binding.btnLifecycle -> {
                 Log.d("Log intent", "Intent")
                 val lifecycleIntent = Intent(this@MenuActivity, LifecycleActivity::class.java)
                 startActivity(lifecycleIntent)
             }
-            R.id.btnIntent -> {
+            binding.btnIntent -> {
                 val intentIntent = Intent(this@MenuActivity, IntentActivity::class.java)
                 startActivity(intentIntent)
             }
-            R.id.btnLayout -> {
+            binding.btnLayout -> {
                 val layoutIntent = Intent(this@MenuActivity, LayoutActivity::class.java)
                 startActivity(layoutIntent)
             }
-            R.id.btnConstraint -> {
+            binding.btnConstraint -> {
                 val constraintIntent = Intent(this@MenuActivity, ConstaintActivity::class.java)
                 startActivity(constraintIntent)
             }
-            R.id.btnVolume -> {
+            binding.btnVolume -> {
                 val volumetIntent = Intent(this@MenuActivity, VolumeActivity::class.java)
                 startActivity(volumetIntent)
             }
-            R.id.btnOperation -> {
+            binding.btnOperation -> {
                 val operationIntent = Intent(this@MenuActivity, OperationActivity::class.java)
                 startActivity(operationIntent)
             }
-            R.id.btnClassification -> {
+            binding.btnClassification -> {
                 val classificationIntent = Intent(this@MenuActivity, ClassificationActivity::class.java)
                 startActivity(classificationIntent)
             }
