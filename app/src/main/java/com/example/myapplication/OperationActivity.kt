@@ -69,7 +69,10 @@ class OperationActivity : AppCompatActivity(), View.OnClickListener {
                 tvOperationResult.text = operation.toString()
             }
             R.id.btnOpDivide -> {
-
+                tvOperator.text = resources.getString(R.string.operation_divide)
+                getInputNumbers()
+                val operation = inputX / inputY
+                tvOperationResult.text = operation.toString()
             }
             R.id.btnOpReset -> {
                 etBilanganX.setText("0")
