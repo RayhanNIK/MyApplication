@@ -29,34 +29,33 @@ class OperationActivity : AppCompatActivity(), View.OnClickListener {
             inputY = binding.etBilanganY.text.toString().toLong()
         }
     }
-
     override fun onClick(view: View) {
-        when(view.id) {
-            R.id.btnOpAdd -> {
+        when(view) {
+            binding.btnOpAdd -> {
                 binding.tvOperator.text = resources.getString(R.string.operation_add)
                 getInputNumbers()
                 val operation = inputX + inputY
                 binding.tvOperationResult.text = operation.toString()
             }
-            R.id.btnOpSubstract -> {
+            binding.btnOpSubstract -> {
                 binding.tvOperator.text = resources.getString(R.string.operation_substract)
                 getInputNumbers()
                 val operation = inputX - inputY
                 binding.tvOperationResult.text = operation.toString()
             }
-            R.id.btnOpMultiply -> {
+            binding.btnOpMultiply -> {
                 binding.tvOperator.text = resources.getString(R.string.operation_multiply)
                 getInputNumbers()
                 val operation = inputX * inputY
                 binding.tvOperationResult.text = operation.toString()
             }
-            R.id.btnOpDivide -> {
+            binding.btnOpDivide -> {
                 binding.tvOperator.text = resources.getString(R.string.operation_divide)
                 getInputNumbers()
                 val operation = inputX / inputY
                 binding.tvOperationResult.text = operation.toString()
             }
-            R.id.btnOpReset -> {
+            binding.btnOpReset -> {
                 binding.etBilanganX.setText("0")
                 binding.etBilanganY.setText("0")
                 binding.tvOperator.text = ""
