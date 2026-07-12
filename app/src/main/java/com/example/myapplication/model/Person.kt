@@ -28,6 +28,13 @@ data class Person (
     }
 
     companion object CREATOR : Parcelable.Creator<Person> {
-        
+        override fun createFromParcel(source: Parcel?): Person? {
+            TODO("Not yet implemented")
+        }
+
+        override fun newArray(size: Int): Array<out Person?>? {
+            TODO("Not yet implemented")
+        }
+
     }
 }
