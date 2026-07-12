@@ -1,11 +1,9 @@
 package com.example.myapplication.model
 
-import android.annotation.SuppressLint
 import android.os.Parcel
 import android.os.Parcelable
 
-@SuppressLint("ParcelCreator")
-data class Person (
+data class Person(
     var name: String?,
     var age: Int?,
     var email: String?,
@@ -16,25 +14,28 @@ data class Person (
         parcel.readString(),
         parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readString(),
-        parcel.readString()) {
+        parcel.readString()
+    ) {
     }
 
     override fun describeContents(): Int {
-        TODO("Not yet implemented")
+        return 0
     }
 
-    override fun writeToParcel(dest: Parcel, flags: Int) {
-        TODO("Not yet implemented")
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(name)
+        parcel.writeValue(age)
+        parcel.writeString(email)
+        parcel.writeString(city)
     }
 
     companion object CREATOR : Parcelable.Creator<Person> {
-        override fun createFromParcel(source: Parcel?): Person? {
-            TODO("Not yet implemented")
+        override fun createFromParcel(parcel: Parcel): Person {
+            return Person(parcel)
         }
 
         override fun newArray(size: Int): Array<out Person?>? {
-            TODO("Not yet implemented")
+            return arrayOfNulls(size)
         }
-
     }
 }
