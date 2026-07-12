@@ -26,6 +26,9 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnOpenWeb: Button = findViewById(R.id.btnOpenWeb)
         btnOpenWeb.setOnClickListener(this)
+
+        val btnIntentMoveData: Button = findViewById(R.id.btnIntentMoveData)
+        btnIntentMoveData.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -63,6 +66,10 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
                 val webPage = "http://www.google.co.id/".toUri()
                 val openWebIntent = Intent(Intent.ACTION_VIEW, webPage)
                 startActivity(openWebIntent)
+            }
+            R.id.btnIntentMoveData -> {
+                val intentMoveData = Intent(this@IntentActivity, IntentMoveDataActivity::class.java)
+                startActivity(intentMoveData)
             }
         }
     }
