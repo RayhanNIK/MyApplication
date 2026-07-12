@@ -1,8 +1,10 @@
 package com.example.myapplication.model
 
+import android.os.Parcelable
+
 data class Person (
-    var name: String = "",
-    var age: Int = 0,
-    var email: String = "",
-    var city: String = ""
-)
+    var name: String?,
+    var age: Int?,
+    var email: String?,
+    var city: String?
+) : Parcelable
