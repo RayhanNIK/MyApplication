@@ -49,4 +49,11 @@
         android:layout_gravity="center"
         android:text="Intent Move Data"/>
 
+    <Button
+        android:id="@+id/btnIntentMoveObject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Intent Move Object"/>
+
 </LinearLayout>
