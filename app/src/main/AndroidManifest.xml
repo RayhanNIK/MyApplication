@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".IntentMoveObjectActivity"
+            android:exported="false" />
+        <activity
             android:name=".ClassificationActivity"
             android:exported="false" />
         <activity
