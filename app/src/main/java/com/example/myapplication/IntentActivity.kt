@@ -93,6 +93,10 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.btnIntentMoveBundle -> {
                 val intentMoveBundle = Intent(this@IntentActivity, IntentMoveBundleActivity::class.java)
+                val bundle = Bundle()
+                bundle.putString(IntentMoveBundleActivity.EXTRA_BUNDLE_NAME, "Rere")
+                bundle.putInt(IntentMoveBundleActivity.EXTRA_BUNDLE_AGE, 18)
+                intentMoveBundle.putExtras(bundle)
                 startActivity(intentMoveBundle)
             }
         }
