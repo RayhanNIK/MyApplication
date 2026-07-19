@@ -33,41 +33,49 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Share Text"/>
+        android:text="Share Text" />
 
     <Button
         android:id="@+id/btnOpenWeb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Open Web"/>
+        android:text="Open Web" />
 
     <Button
         android:id="@+id/btnIntentMoveData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Intent Move Data"/>
+        android:text="Intent Move Data" />
 
     <Button
         android:id="@+id/btnIntentMoveObject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Intent Move Object"/>
+        android:text="Intent Move Object" />
 
     <Button
         android:id="@+id/btnIntentMoveBundle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Intent Move Bundle"/>
+        android:text="Intent Move Bundle" />
 
     <Button
         android:id="@+id/btnIntentMoveResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Intent Move Result"/>
+        android:text="Intent Move Result" />
+
+    <TextView
+        android:id="@+id/tvIntentResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Hasil Intent Result"
+        android:textSize="24sp" />
 
 </LinearLayout>
