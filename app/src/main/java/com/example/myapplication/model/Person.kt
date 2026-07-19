@@ -1,41 +1,12 @@
 package com.example.myapplication.model
 
-import android.os.Parcel
 import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Person(
     var name: String?,
     var age: Int?,
     var email: String?,
     var city: String?
-) : Parcelable {
-
-    constructor(parcel: Parcel) : this(
-        parcel.readString(),
-        parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readString(),
-        parcel.readString()
-    ) {
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(name)
-        parcel.writeValue(age)
-        parcel.writeString(email)
-        parcel.writeString(city)
-    }
-
-    companion object CREATOR : Parcelable.Creator<Person> {
-        override fun createFromParcel(parcel: Parcel): Person {
-            return Person(parcel)
-        }
-
-        override fun newArray(size: Int): Array<out Person?>? {
-            return arrayOfNulls(size)
-        }
-    }
-}
+) : Parcelable
