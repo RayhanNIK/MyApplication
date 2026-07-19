@@ -63,4 +63,11 @@
         android:layout_gravity="center"
         android:text="Intent Move Bundle"/>
 
+    <Button
+        android:id="@+id/btnIntentMoveResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Intent Move Result"/>
+
 </LinearLayout>
