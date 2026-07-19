@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
+import com.example.myapplication.model.Person
 
 class IntentActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,7 +78,14 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(intentMoveData)
             }
             R.id.btnIntentMoveObject -> {
+                val person = Person(
+                    "Rere",
+                    18,
+                    "mail@gmail.com",
+                    "Jogja"
+                )
                 val intentMoveObject = Intent(this@IntentActivity, IntentMoveObjectActivity::class.java)
+                intentMoveObject.putExtra(IntentMoveObjectActivity.EXTRA_PERSON, person)
                 startActivity(intentMoveObject)
             }
         }
