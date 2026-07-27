@@ -4,11 +4,31 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContract
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import com.example.myapplication.model.Person
 
 class IntentActivity : AppCompatActivity(), View.OnClickListener {
+
+    private lateinit var tvIntentResult: TextView
+
+    private val resultLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == IntentMoveResultActivity.RESULT_CODE &&
+            result.data != null
+        ) {
+            val selectedValue = result.data?.getIntExtra(
+                IntentMoveResultActivity.EXTRA_VALUE, 0
+            )
+            tvIntentResult.text = "Hasil : $selectedValue"
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intent)
@@ -39,6 +59,8 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnIntentMoveResult: Button = findViewById(R.id.btnIntentMoveResult)
         btnIntentMoveResult.setOnClickListener(this)
+
+        tvIntentResult = findViewById(R.id.tvIntentResult)
     }
 
     override fun onClick(view: View) {
@@ -56,6 +78,7 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
                 val dialphoneIntent = Intent(Intent.ACTION_DIAL, "tel:$phoneNumber".toUri())
                 startActivity(dialphoneIntent)
             }
+
             R.id.btnMessage -> {
                 val phoneNumber = "08123456789"
                 val sendSMS = "smsto:$phoneNumber".toUri()
@@ -64,25 +87,29 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
                 sendsmsIntent.putExtra("sms_body", message)
                 startActivity(sendsmsIntent)
             }
+
             R.id.btnShareText -> {
                 val sharedtext = "Ini text yang akan di share"
                 val sharedTextIntent = Intent(Intent.ACTION_SEND)
-                sharedTextIntent.putExtra(Intent.EXTRA_TEXT,sharedtext)
+                sharedTextIntent.putExtra(Intent.EXTRA_TEXT, sharedtext)
                 sharedTextIntent.type = "text/plain"
-                val textIntent = Intent.createChooser(sharedTextIntent,null)
+                val textIntent = Intent.createChooser(sharedTextIntent, null)
                 startActivity(textIntent)
             }
+
             R.id.btnOpenWeb -> {
                 val webPage = "http://www.google.co.id/".toUri()
                 val openWebIntent = Intent(Intent.ACTION_VIEW, webPage)
                 startActivity(openWebIntent)
             }
+
             R.id.btnIntentMoveData -> {
                 val intentMoveData = Intent(this@IntentActivity, IntentMoveDataActivity::class.java)
                 intentMoveData.putExtra(IntentMoveDataActivity.EXTRA_NAME, "Rere")
                 intentMoveData.putExtra(IntentMoveDataActivity.EXTRA_AGE, 18)
                 startActivity(intentMoveData)
             }
+
             R.id.btnIntentMoveObject -> {
                 val person = Person(
                     "Rere",
@@ -90,21 +117,26 @@ class IntentActivity : AppCompatActivity(), View.OnClickListener {
                     "mail@gmail.com",
                     "Jogja"
                 )
-                val intentMoveObject = Intent(this@IntentActivity, IntentMoveObjectActivity::class.java)
+                val intentMoveObject =
+                    Intent(this@IntentActivity, IntentMoveObjectActivity::class.java)
                 intentMoveObject.putExtra(IntentMoveObjectActivity.EXTRA_PERSON, person)
                 startActivity(intentMoveObject)
             }
+
             R.id.btnIntentMoveBundle -> {
-                val intentMoveBundle = Intent(this@IntentActivity, IntentMoveBundleActivity::class.java)
+                val intentMoveBundle =
+                    Intent(this@IntentActivity, IntentMoveBundleActivity::class.java)
                 val bundle = Bundle()
                 bundle.putString(IntentMoveBundleActivity.EXTRA_BUNDLE_NAME, "Rere")
                 bundle.putInt(IntentMoveBundleActivity.EXTRA_BUNDLE_AGE, 18)
                 intentMoveBundle.putExtras(bundle)
                 startActivity(intentMoveBundle)
             }
+
             R.id.btnIntentMoveResult -> {
-                val intentMoveResult = Intent(this@IntentActivity, IntentMoveResultActivity::class.java)
-                startActivity(intentMoveResult)
+                val intentMoveResult =
+                    Intent(this@IntentActivity, IntentMoveResultActivity::class.java)
+                resultLauncher.launch(intentMoveResult)
             }
         }
     }
