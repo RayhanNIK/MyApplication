@@ -1,10 +1,11 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityIntentMoveResultBinding
 
-class IntentMoveResultActivity : AppCompatActivity() {
+class IntentMoveResultActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityIntentMoveResultBinding
 
@@ -12,5 +13,13 @@ class IntentMoveResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityIntentMoveResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.btnResultChoose.setOnClickListener(this)
+    }
+
+    override fun onClick(view: View) {
+        if (view == binding.btnResultChoose) {
+
+        }
     }
 }
