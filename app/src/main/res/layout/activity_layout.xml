@@ -92,9 +92,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="480dp"/>
+            app:layout_constraintGuide_begin="300dp"/>
 
         <include
+            android:id="@+id/include_specifications"
             layout="@layout/layout_specification"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -102,6 +103,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/guideline"/>
+
+        <include
+            android:id="@+id/include_seller"
+            layout="@layout/layout_seller"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include_specifications"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
 
