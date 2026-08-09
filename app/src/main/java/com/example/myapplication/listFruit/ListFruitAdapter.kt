@@ -1,7 +1,10 @@
 package com.example.myapplication.listFruit
 
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.R
 
 class ListFruitAdapter: RecyclerView.Adapter<ListFruitAdapter.ListFruitViewHolder>() {
     override fun onCreateViewHolder(
@@ -22,8 +25,8 @@ class ListFruitAdapter: RecyclerView.Adapter<ListFruitAdapter.ListFruitViewHolde
         TODO("Not yet implemented")
     }
 
-    class ListFruitViewHolder {
-
+    class ListFruitViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val tvFruitName: TextView = itemView.findViewById(R.id.tvFruitName)
     }
 
 }
