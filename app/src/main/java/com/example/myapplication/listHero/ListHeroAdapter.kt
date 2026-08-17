@@ -17,9 +17,10 @@ class ListHeroAdapter(
         parent: ViewGroup,
         viewType: Int
     ): ListHeroViewHolder {
-        val view: View=
+        val view: View =
             LayoutInflater.from(parent.context).inflate(
-                R.layout.item_list_hero, parent, false)
+                R.layout.item_list_hero, parent, false
+            )
         return ListHeroViewHolder(view)
     }
 
