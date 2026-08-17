@@ -7,6 +7,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityMenuBinding
 import com.example.myapplication.listFruit.ListFruitActivity
+import com.example.myapplication.listHero.ListHeroActivity
 
 class MenuActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityMenuBinding
@@ -25,6 +26,7 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnOperation.setOnClickListener(this)
         binding.btnClassification.setOnClickListener(this)
         binding.btnListFruit.setOnClickListener(this)
+        binding.btnListHero.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -66,6 +68,10 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
             binding.btnListFruit -> {
                 val listFruitIntent = Intent(this@MenuActivity, ListFruitActivity::class.java)
                 startActivity(listFruitIntent)
+            }
+            binding.btnListHero -> {
+                val listHeroIntent = Intent(this@MenuActivity, ListHeroActivity::class.java)
+                startActivity(listHeroIntent)
             }
         }
     }
