@@ -1,31 +1,39 @@
 package com.example.myapplication.listHero
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
+import com.example.myapplication.model.Hero
 
-class ListHeroAdapter : RecyclerView.Adapter<ListHeroAdapter.ListHeroViewHolder>() {
+class ListHeroAdapter(
+    private val listHero: ArrayList<Hero>
+) : RecyclerView.Adapter<ListHeroAdapter.ListHeroViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): ListHeroViewHolder {
-        TODO("Not yet implemented")
+        val view: View=
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.item_list_hero, parent, false)
+        return ListHeroViewHolder(view)
     }
 
     override fun onBindViewHolder(
         holder: ListHeroViewHolder,
         position: Int
     ) {
-        TODO("Not yet implemented")
+        val (name, description, photo) = listHero[position]
+        holder.ivHeroPhoto.setImageResource(photo)
+        holder.tvHeroName.text = name
+        holder.tvHeroDesc.text = description
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount(): Int = listHero.size
 
     class ListHeroViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val ivHeroPhoto: ImageView = itemView.findViewById(R.id.ivHeroPhoto)
