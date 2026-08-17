@@ -2,6 +2,7 @@ package com.example.myapplication.listFruit
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.ItemListFruitBinding
 import com.example.myapplication.model.Fruit
@@ -26,6 +27,13 @@ class ListFruitAdapter(
     ) {
         val item = itemList[position]
         holder.binding.tvFruitName.text = item.name
+
+        holder.itemView.setOnClickListener {
+            Toast.makeText(
+                holder.itemView.context,
+                "Kamu memilih " +itemList[position].name,
+                Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun getItemCount(): Int = itemList.size
