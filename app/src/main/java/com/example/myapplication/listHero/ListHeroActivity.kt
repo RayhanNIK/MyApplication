@@ -1,6 +1,7 @@
 package com.example.myapplication.listHero
 
 import android.os.Bundle
+import android.view.Menu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -51,5 +52,10 @@ class ListHeroActivity : AppCompatActivity() {
 
     private fun showSelectedHero(hero: Hero) {
         Toast.makeText(this, "Kamu memilih " + hero.name, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_hero, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 }
