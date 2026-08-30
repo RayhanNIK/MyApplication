@@ -13,6 +13,7 @@
         android:theme="@style/Theme.MyApplication">
         <activity
             android:name=".listHero.ListHeroActivity"
+            android:theme="@style/Theme.MyApplication.WithActionBar"
             android:exported="false" />
         <activity
             android:name=".listFruit.ListFruitActivity"
