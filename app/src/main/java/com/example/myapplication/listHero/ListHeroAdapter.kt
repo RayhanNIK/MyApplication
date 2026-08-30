@@ -53,6 +53,10 @@ class ListHeroAdapter(
         val tvHeroDesc: TextView = itemView.findViewById(R.id.tvHeroDesc)
     }
 
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+    
     interface OnItemClickCallback {
         fun onItemClicked(data: Hero)
     }
