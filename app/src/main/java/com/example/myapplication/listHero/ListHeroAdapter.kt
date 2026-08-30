@@ -14,6 +14,8 @@ class ListHeroAdapter(
     private val listHero: ArrayList<Hero>
 ) : RecyclerView.Adapter<ListHeroAdapter.ListHeroViewHolder>() {
 
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -51,5 +53,8 @@ class ListHeroAdapter(
         val tvHeroDesc: TextView = itemView.findViewById(R.id.tvHeroDesc)
     }
 
+    interface OnItemClickCallback {
+        fun onItemClicked(data: Hero)
+    }
 
 }
