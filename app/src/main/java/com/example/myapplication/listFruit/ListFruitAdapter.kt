@@ -28,7 +28,7 @@ class ListFruitAdapter(
         val item = itemList[position]
         holder.binding.tvFruitName.text = item.name
 
-        holder.itemView.setOnClickListener {
+        holder.binding.root.setOnClickListener {
             Toast.makeText(
                 holder.itemView.context,
                 "Kamu memilih " +itemList[position].name,
