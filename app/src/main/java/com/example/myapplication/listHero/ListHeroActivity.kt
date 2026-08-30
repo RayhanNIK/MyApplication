@@ -2,8 +2,10 @@ package com.example.myapplication.listHero
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
@@ -57,5 +59,17 @@ class ListHeroActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_hero, menu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_list -> {
+                rvHeroes.layoutManager = LinearLayoutManager(this)
+            }
+            R.id.action_grid -> {
+                rvHeroes.layoutManager = GridLayoutManager(this,2)
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
