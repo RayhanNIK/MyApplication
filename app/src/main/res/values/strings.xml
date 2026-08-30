@@ -70,4 +70,6 @@
         <item>@drawable/ic_hero_sukarno</item>
         <item>@drawable/ic_hero_supomo</item>
     </integer-array>
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
 </resources>
