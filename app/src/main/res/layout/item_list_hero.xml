@@ -21,7 +21,7 @@
         <ImageView
             android:id="@+id/ivHeroPhoto"
             android:layout_width="70dp"
-            android:layout_height="100dp"
+            android:layout_height="0dp"
             android:scaleType="centerCrop"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
         <TextView
             android:id="@+id/tvHeroDesc"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ellipsize="end"
             android:maxLines="5"
