@@ -37,11 +37,7 @@ class ListHeroAdapter(
         holder.tvHeroDesc.text = description
 
         holder.itemView.setOnClickListener {
-            Toast.makeText(
-                holder.itemView.context,
-                "Kamu memilih " + listHero[position].name,
-                Toast.LENGTH_SHORT
-            ).show()
+            onItemClickCallback.onItemClicked(listHero[position])
         }
     }
 
@@ -56,7 +52,7 @@ class ListHeroAdapter(
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
     }
-    
+
     interface OnItemClickCallback {
         fun onItemClicked(data: Hero)
     }
