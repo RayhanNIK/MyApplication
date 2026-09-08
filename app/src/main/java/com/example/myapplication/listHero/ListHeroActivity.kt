@@ -1,5 +1,6 @@
 package com.example.myapplication.listHero
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -56,6 +57,9 @@ class ListHeroActivity : AppCompatActivity() {
 
     private fun showSelectedHero(hero: Hero) {
         Toast.makeText(this, "Kamu memilih " + hero.name, Toast.LENGTH_SHORT).show()
+
+        val heroDetailIntent = Intent(this@ListHeroActivity, DetailHeroActivity::class.java)
+        startActivity(heroDetailIntent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
