@@ -31,9 +31,11 @@ class ListHeroActivity : AppCompatActivity() {
         val dataName = resources.getStringArray(R.array.data_name)
         val dataDescription = resources.getStringArray(R.array.data_description)
         val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
+        val dataPhotoOnline = resources.getStringArray(R.array.data_photo_online)
         val listHero = ArrayList<Hero>()
         for (i in dataName.indices) {
-            val hero = Hero(dataName[i], dataDescription[i], dataPhoto.getResourceId(i, -1))
+            val hero = Hero(dataName[i], dataDescription[i],
+                dataPhoto.getResourceId(i, -1), dataPhotoOnline[i])
             listHero.add(hero)
         }
         return listHero
