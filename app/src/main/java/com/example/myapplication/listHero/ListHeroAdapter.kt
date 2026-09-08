@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.myapplication.R
 import com.example.myapplication.model.Hero
 
@@ -30,10 +31,14 @@ class ListHeroAdapter(
         holder: ListHeroViewHolder,
         position: Int
     ) {
-        val (name, description, photo) = listHero[position]
-        holder.ivHeroPhoto.setImageResource(photo)
+        val (name, description, photo, photoOnline) = listHero[position]
+
+        //holder.ivHeroPhoto.setImageResource(photo)
         holder.tvHeroName.text = name
         holder.tvHeroDesc.text = description
+        Glide.with(holder.itemView.context)
+            .load(photoOnline)
+            .into(holder.ivHeroPhoto)
 
         holder.itemView.setOnClickListener {
             onItemClickCallback.onItemClicked(listHero[position])
