@@ -27,6 +27,7 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnClassification.setOnClickListener(this)
         binding.btnListFruit.setOnClickListener(this)
         binding.btnListHero.setOnClickListener(this)
+        binding.btnWebview.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -72,6 +73,10 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
             binding.btnListHero -> {
                 val listHeroIntent = Intent(this@MenuActivity, ListHeroActivity::class.java)
                 startActivity(listHeroIntent)
+            }
+            binding.btnWebview -> {
+                val webviewIntent = Intent(this@MenuActivity, WebviewActivity::class.java)
+                startActivity(webviewIntent)
             }
         }
     }

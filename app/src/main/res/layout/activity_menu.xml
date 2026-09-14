@@ -77,4 +77,11 @@
         android:layout_gravity="center"
         android:text="List of Heroes" />
 
+    <Button
+        android:id="@+id/btnWebview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Webview" />
+
 </LinearLayout>
