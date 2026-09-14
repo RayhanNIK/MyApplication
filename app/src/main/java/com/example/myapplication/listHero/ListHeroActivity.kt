@@ -59,6 +59,9 @@ class ListHeroActivity : AppCompatActivity() {
         Toast.makeText(this, "Kamu memilih " + hero.name, Toast.LENGTH_SHORT).show()
 
         val heroDetailIntent = Intent(this@ListHeroActivity, DetailHeroActivity::class.java)
+        heroDetailIntent.putExtra(DetailHeroActivity.EXTRA_NAME, hero.name)
+        heroDetailIntent.putExtra(DetailHeroActivity.EXTRA_DESC, hero.description)
+        heroDetailIntent.putExtra(DetailHeroActivity.EXTRA_PHOTO, hero.onlinePhoto)
         startActivity(heroDetailIntent)
     }
 
