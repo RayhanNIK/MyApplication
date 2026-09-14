@@ -6,6 +6,7 @@ import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 class WebviewActivity : AppCompatActivity() {
@@ -33,14 +34,24 @@ class WebviewActivity : AppCompatActivity() {
                 message: String,
                 result: JsResult
             ): Boolean {
-                Toast.makeText(this@WebviewActivity,
+                /**Toast.makeText(this@WebviewActivity,
                     message,
-                    Toast.LENGTH_SHORT).show()
-                result.confirm()
+                    Toast.LENGTH_SHORT).show()**/
+                AlertDialog.Builder(this@WebviewActivity)
+                    .setTitle("Alert")
+                    .setMessage(message)
+                    .setPositiveButton(android.R.string.ok) { _,_ ->
+                        Toast.makeText(this@WebviewActivity,
+                            message, Toast.LENGTH_LONG).show()
+                        result.confirm()
+                    }
+                    .setCancelable(false)
+                    .create()
+                    .show()
                 return true
             }
         }
-        webView.webChromeClient = WebChromeClient()
+        //webView.webChromeClient = WebChromeClient()
         webView.loadUrl("https://www.dicoding.com")
     }
 }
