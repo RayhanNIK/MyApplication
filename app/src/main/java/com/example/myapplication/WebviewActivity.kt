@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.webkit.JsResult
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -25,6 +26,20 @@ class WebviewActivity : AppCompatActivity() {
             }
         }
 
+        webView.webChromeClient = object : WebChromeClient() {
+            override fun onJsAlert(
+                view: WebView,
+                url: String,
+                message: String,
+                result: JsResult
+            ): Boolean {
+                Toast.makeText(this@WebviewActivity,
+                    message,
+                    Toast.LENGTH_SHORT).show()
+                result.confirm()
+                return true
+            }
+        }
         webView.webChromeClient = WebChromeClient()
         webView.loadUrl("https://www.dicoding.com")
     }
