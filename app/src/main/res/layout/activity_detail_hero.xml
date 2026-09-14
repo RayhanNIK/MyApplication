@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/svHeroDetail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".listHero.DetailHeroActivity">
 
-    <androidx.cardview.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/cvHeroDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/heroes_name"
-                android:textColor="@color/orange_dark"/>
+                android:textColor="@color/orange_dark" />
 
             <View
                 android:id="@+id/viewHeroDetailSeparator"
@@ -36,16 +34,16 @@
                 android:layout_below="@+id/tvHeroDetailName"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="4dp"
-                android:background="@color/orange_light"/>
+                android:background="@color/orange_light" />
 
             <ImageView
                 android:id="@+id/tvHeroDetailImage"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="350dp"
                 android:layout_below="@+id/viewHeroDetailSeparator"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="4dp"
-                tools:src="@drawable/ic_launcher_foreground"/>
+                tools:src="@drawable/ic_launcher_foreground" />
 
             <TextView
                 android:id="@+id/tvHeroDetailDesc"
@@ -55,7 +53,7 @@
                 android:layout_below="@id/tvHeroDetailImage"
                 android:layout_marginBottom="4dp"
                 android:text="@string/description"
-                android:textColor="@color/gray_dark"/>
+                android:textColor="@color/white" />
 
         </RelativeLayout>
 
