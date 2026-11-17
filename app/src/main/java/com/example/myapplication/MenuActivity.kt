@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
 import com.example.myapplication.databinding.ActivityMenuBinding
 import com.example.myapplication.listFruit.ListFruitActivity
 import com.example.myapplication.listHero.ListHeroActivity
@@ -28,6 +29,7 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnListFruit.setOnClickListener(this)
         binding.btnListHero.setOnClickListener(this)
         binding.btnWebview.setOnClickListener(this)
+        binding.btnFragment.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -77,6 +79,10 @@ class MenuActivity : AppCompatActivity(), View.OnClickListener {
             binding.btnWebview -> {
                 val webviewIntent = Intent(this@MenuActivity, WebviewActivity::class.java)
                 startActivity(webviewIntent)
+            }
+            binding.btnFragment -> {
+                val fragmentIntent = Intent(this@MenuActivity, MyFragmentActivity::class.java)
+                startActivity(fragmentIntent)
             }
         }
     }
